@@ -64,6 +64,7 @@ public:
       for (int i = 0; i < length; i++)
         temp[i] = heap[i];
       heap = temp;
+      // delete[] temp;
       cout << "Capacity added." << endl;
     }
   }
@@ -140,7 +141,7 @@ public:
 
 int main() {
   MinHeap mH(20);
-  vector<int> vec{12, 4,10,5,29,3,59,48,92,32,1,54,76,32,87,21,65,23,65,32};
+  vector<int> vec{12, 4,10,5,29,3,59,48,92,32,1,54,76,32,87,21,65,23,65,32}, vec2{42,67,32,76,98,231,65,2,5};
   // cout << vec.size();
   for (auto& i : vec)
     mH.add(i);
@@ -148,6 +149,12 @@ int main() {
   mH.print();
 
   mH.pop();
+  mH.print();
+
+  //testing capacity check and increase
+  for (auto& i : vec2)
+    mH.add(i);
+
   mH.print();
 
   return 0;
