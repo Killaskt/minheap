@@ -63,8 +63,8 @@ public:
       int* temp = new int[total_capacity];
       for (int i = 0; i < length; i++)
         temp[i] = heap[i];
+      delete[] heap;
       heap = temp;
-      // delete[] temp;
       cout << "Capacity added." << endl;
     }
   }
